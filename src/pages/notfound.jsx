@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 
 export default function NotFound() {
+  const error = useRouteError()
   return (
     <div className="content">
       <section className="page_404">
@@ -16,6 +17,9 @@ export default function NotFound() {
                   <h3 className="h2">Look like you're lost</h3>
 
                   <p>the page you are looking for not avaible!</p>
+                  <p>
+                  {error.statusText || error.message}
+                  </p>
 
                   <Link to="/" className="link_404">
                     Go to Home

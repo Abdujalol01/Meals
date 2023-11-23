@@ -15,6 +15,7 @@ function App() {
     {
       path: "/",
       element: <Layout />,
+      errorElement:<NotFound/>,
       children:[
         {
           path:"/",
@@ -35,10 +36,6 @@ function App() {
         {
           path:"/recipe/:id",
           element:<Recipe/>
-        },
-        {
-          path:"*",
-          element:<NotFound/>
         },
       ]
     },
